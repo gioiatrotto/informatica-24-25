@@ -16,10 +16,10 @@ int main(){
      }
      else{
         if(a>b)
-            printf("il primo valore %a è maggiore del secondo valore %d",a,b);
+            printf("il primo valore %d è maggiore del secondo valore %d",a,b);
     else
         if(a<b)
-            printf("il primo valore %a è minore del secondo valore %d",a,b);      
+            printf("il primo valore %d è minore del secondo valore %d",a,b);      
 }
      
 }
