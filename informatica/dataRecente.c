@@ -37,27 +37,27 @@ int main(){
     if(mese>=1 && mese<=12){
         if(mese==2){
             if(giorno>=1 && giorno<=28+bisestile)
-                printf("la data è accettabile");
+                printf("la data è accettabile\n");
             else{
-                printf("la data non è accettabile");
+                printf("la data non è accettabile\n");
             }
         }
         
         else{
             if(mese==11 || mese==4 || mese==6 || mese==9){
                 if(giorno>=1 && giorno<=30){
-                    printf("\nla data è accettabile");
+                    printf("\nla data è accettabile\n");
                 }
                 else{
-                    printf("la data non è accettabile");
+                    printf("la data non è accettabile\n");
                 }
             }
             else{
                 if(giorno>=1 && giorno<=31){
-                    printf("\nla data è accettabile");
+                    printf("\nla data è accettabile\n");
                 }
                 else{
-                    printf("la data non è accettabile");
+                    printf("la data non è accettabile\n");
                 }
             }
         }
@@ -100,19 +100,19 @@ int main(){
     if(mese1>=1 && mese1<=12){
         if(mese1==2){
             if(giorno1>=1 && giorno1<=28+bisestile1)
-                printf("la data è accettabile");
+                printf("la data è accettabile\n");
             else{
-                printf("la data non è accettabile");
+                printf("la data non è accettabile\n");
             }
         }
         
         else{
             if(mese1==11 || mese1==4 || mese1==6 || mese1==9){
                 if(giorno1>=1 && giorno1<=30){
-                    printf("\nla data è accettabile");
+                    printf("\nla data è accettabile\n");
                 }
                 else{
-                    printf("la data non è accettabile");
+                    printf("la data non è accettabile\n");
                 }
             }
             else{
