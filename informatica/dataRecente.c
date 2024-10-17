@@ -14,7 +14,7 @@ int main(){
     scanf("%d", &giorno);
     printf("inserisci il mese: ");
     scanf("%d", &mese);
-    printf("inserisci il anno: ");
+    printf("inserisci l'anno : ");
     scanf("%d", &anno);
 
     //controllo dell'annno
@@ -129,6 +129,8 @@ int main(){
         printf("la data non è accettabile\n");
     }
 
+    //controllo quale data è più recente
+    
     if(anno>anno1)
         printf("la prima data è più recente");
     else if(anno==anno1){
