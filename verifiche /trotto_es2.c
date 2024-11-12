@@ -16,7 +16,6 @@ int main(){
     if(n1+n2<200){
         printf("la somma non supera i 200,aggiungi un altro numero: ");
         scanf("%d", &n3);
-       
         }
         else if(n1+n2+n3<200){
             printf("la somma non supera i 200,aggiungi un altro numero: ");
@@ -29,6 +28,7 @@ int main(){
             
     else 
     printf("la somma ha superato i 200!");
+
     
    
 
