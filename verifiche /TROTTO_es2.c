@@ -42,6 +42,6 @@ int main(){
             }            
         }
     } else
-        printf("il valori inseriti non sono corretti")
+        printf("il valori inseriti non sono corretti");
         
 }
