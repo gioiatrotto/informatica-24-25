@@ -18,7 +18,7 @@ int main(){
     
     printf("la data generata è: %d/%d/%d", datag,datam,dataa);
 
-    if (dataa%400==0)
+   
 
 
 
