@@ -23,5 +23,5 @@ int main(){
         quoz-=num2;
         cnt++;
     }
-
+    printf("il risultato è: %d", cnt);
 }
