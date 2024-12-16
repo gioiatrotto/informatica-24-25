@@ -5,7 +5,8 @@ es: 5 1+2+3+4+5*/
 #include <stdio.h>
 int main(){
     
-    int N, somma=0;
+    int N=0;
+    int somma=0;
     do{
         printf("insiresci un valore: ");
         scanf("%d", &N);
