@@ -9,8 +9,8 @@ int main(){
     printf("\ninserisci il valore iniziale: ");
     scanf("%d", &inizio);
     do{
-    printf("\ninserisci quanti elementi vuoi considerare: ");
-    scanf("%d", &quantita);
+        printf("\ninserisci quanti elementi vuoi considerare: ");
+        scanf("%d", &quantita);
     }while(quantita<=0);
 
     for(int i=inizio+1; i<=inizio+quantita; i++ ){
