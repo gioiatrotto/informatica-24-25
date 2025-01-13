@@ -12,7 +12,7 @@ int main(){
         printf("inserisci un numero: ");
         scanf("%d", &n);
         if(n>x){
-            cnt++
+            cnt++;
         }
     }
     printf("i numeri maggiori di %d sono: %d", x,cnt);
