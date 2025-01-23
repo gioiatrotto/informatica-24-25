@@ -12,10 +12,10 @@ int main(){
             if(n%i==0){
                 div=i;
                 if(div>=8 && div<=38){
-                    printf("\nil divisore %d del numero %d è compreso tra 8 e 38", div,n);
-                }
-            }else
-                printf("\nil divisore %d del numero %d non è compreso tra 8 e 38", div,n);
+                    printf("il divisore %d del numero %d è compreso tra 8 e 38\n", div,n);
+                }else
+                printf("il divisore %d del numero %d non è compreso tra 8 e 38\n", div,n);
+            }
         }
     }while(n!=(-1));
 }
