@@ -5,7 +5,7 @@ int main(){
    
     printf("inserisci il valore di cui vuoi il fattoriale: ");
     scanf("%d", &n);
-   for(int i=1; i<n; i++)
+   for(int i=1; i<=n; i++)
     fatt*=i;
 
     printf(" il calcolo del fattoriale di %d è: %d", n,fatt);
