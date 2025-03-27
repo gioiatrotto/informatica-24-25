@@ -24,7 +24,7 @@ void stampaVett(int vett[], int dim, char sep){
     }
 }
 void valoriRandom(int vett[], int dim){
-    srand(time(NULL));
+    
     for(int i=0; i<dim; i++){
         vett[i]=rand()%100;
         
@@ -97,6 +97,14 @@ void riempiVettoreOrdinatoCasuale(int vett[], int dim, int minimo, int massimo) 
         pos = trovaPosizione(vett, i, num); 
         shiftDx(vett, i, pos);
         vett[pos] = num;
+    }
+}
+void scambiaVettori(int vettA[],int vettB[],int dim){
+    int temp=0;
+    for(int i=0; i<dim; i++){
+        temp=vettA[i];
+        vettA[i]=vettB[i];
+        vettB[i]=temp;
     }
 }
 
