@@ -22,4 +22,4 @@ int main(){
     stampaVett(vettoreA, DIM, '.');
     printf("\n");
     stampaVett(vettoreB, DIM, '.');
-}
+} 

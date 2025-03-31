@@ -108,3 +108,5 @@ void scambiaVettori(int vettA[],int vettB[],int dim){
     }
 }
 
+
+
