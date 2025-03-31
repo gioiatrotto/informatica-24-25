@@ -6,14 +6,17 @@
 #define DIM 10
 
 int main(){
+
     srand(time(NULL));
     int vettoreA[DIM]={0};
     int vettoreB[DIM]={0};
+    
     valoriRandom(vettoreA, DIM);
     stampaVett(vettoreA, DIM, '.');
     printf("\n");
     valoriRandom(vettoreB, DIM);
     stampaVett(vettoreB, DIM, '.');
+
     scambiaVettori(vettoreA, vettoreB, DIM);
     printf("\nscambio i valori dei vettori:\n");
     stampaVett(vettoreA, DIM, '.');
