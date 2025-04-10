@@ -79,7 +79,7 @@ void shiftDx (int vett[], int dim, int pos){
 }
 int trovaPosizione (int vett[], int dim, int num){
     int i=0;
-    while(vett[i]<num && i<dim){
+    while(vett[i]!=num && i<dim){
         i++;
     }
     return i;
@@ -109,7 +109,7 @@ int SommaVettore(int vett[], int dim, int *_cnt){
     while(vett[i]!=0 && i<dim){
         somma+=vett[i];
         i++;
-        *_cnt++;
+        (*_cnt)++;
     }
     return somma;
 }

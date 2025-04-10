@@ -12,5 +12,5 @@ int main(){
     richiediValori(vettore,DIM);
     stampaVett(vettore,DIM, '_');
     sommavett=SommaVettore(vettore,DIM, &cnt);
-    printf("i %d elementi sommati danno la somma di: %d",cnt,sommavett);
+    printf("\n i %d elementi sommati danno la somma di: %d",cnt,sommavett);
 }
