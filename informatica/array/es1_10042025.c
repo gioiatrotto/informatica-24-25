@@ -7,6 +7,10 @@ quanti ne hai sommati*/
 #define DIM 6
 int main(){
     int vettore[DIM]={0};
+    int sommavett=0;
+    int cnt=0;
     richiediValori(vettore,DIM);
-
+    stampaVett(vettore,DIM, '_');
+    sommavett=SommaVettore(vettore,DIM, &cnt);
+    printf("i %d elementi sommati danno la somma di: %d",cnt,sommavett);
 }

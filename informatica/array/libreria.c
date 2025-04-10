@@ -10,11 +10,8 @@ void richiediValori(int vett[],int dim){
     int n=0, i=0;
     while(i<dim){
         printf("inserisci un valore: ");
-        scanf("%d", &n);
-        if(n%2==0){
-         vett[i]=n;
-         i++;
-        }
+        scanf("%d", &vett[i]);
+        i++;
     }
 }
 
@@ -106,6 +103,15 @@ void scambiaVettori(int vettA[],int vettB[],int dim){
         vettA[i]=vettB[i];
         vettB[i]=temp;
     }
+}
+int SommaVettore(int vett[], int dim, int *_cnt){
+    int somma=0,i=0,cnt=0;
+    while(vett[i]!=0 && i<dim){
+        somma+=vett[i];
+        i++;
+        *_cnt++;
+    }
+    return somma;
 }
 
 
