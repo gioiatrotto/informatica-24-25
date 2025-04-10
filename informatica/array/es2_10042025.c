@@ -16,8 +16,8 @@ void _trovaPosizione (int vett[], int dim){
             
     }
     if(vett[i]%2==1){
-        printf("\nil primo numero dispari è %d\n nella posizione %d",vett[i],i);
-        printf("sono stati incontrati %d valori",cnt);
+        printf("\nil primo numero dispari è %d\n nella posizione %d",vett[i],i+1);
+        printf("\nsono stati incontrati %d valori",cnt);
     }
     
    
