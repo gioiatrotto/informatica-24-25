@@ -12,3 +12,4 @@ int ricercaBinaria(int array[], int dim, int estInf, int estSup, int valore);
 void riempiVettoreOrdinatoCasuale(int vett[], int dim, int minimo, int massimo);
 void scambiaVettori(int vettA[],int vettB[],int dim);
 int SommaVettore(int vett[], int dim, int *_cnt);
+void caricaBubble(int vett[], int dim);

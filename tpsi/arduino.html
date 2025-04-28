@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetto Arduino</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe0f0; /* Sfondo rosa pastello */
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #d63384;
+            font-weight: 600;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #6c757d;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .section {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            background-color: #f8d7da;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            font-size: 1.1em;
+            background: #fff;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .image-gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-description {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .image-description textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            resize: none;
+        }
+        .textarea-container {
+            margin-top: 20px;
+            text-align: left;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            resize: none;
+        }
+        .footer {
+            margin-top: 40px;
+            padding: 15px;
+            background-color: pink;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Progetto Arduino 🌟</h1>
+        <p>Un progetto divertente per imparare Arduino in modo semplice!</p>
+        
+        <div class="section">
+            <h2>🔍 Cosa fa il progetto?</h2>
+            <p>Questo progetto utilizza un sensore di temperatura per monitorare l'ambiente. 
+               Se la temperatura supera un certo limite, un LED si accenderà e un buzzer emetterà un suono di avviso.</p>
+        </div>
+
+        <div class="section">
+            <h2>🛠️ Materiali necessari</h2>
+            <ul>
+                <li>🔵 Arduino Uno</li>
+                <li>🌡️ Sensore di temperatura (DHT11)</li>
+                <li>💡 LED</li>
+                <li>🔊 Buzzer</li>
+                <li>⚡ Resistenze</li>
+                <li>🔌 Cavi jumper</li>
+                <li>🔲 Breadboard</li>
+            </ul>
+        </div>
+
+        <!-- Galleria immagini con casella di testo -->
+        <div class="section image-gallery">
+            <h2>📷 Immagini del progetto</h2>
+            <img src="arduino1.jpg" alt="Arduino e sensore">
+            <img src="arduino2.jpg" alt="Circuito montato">
+            <img src="arduino3.jpg" alt="Schema di collegamento">
+
+            <div class="image-description">
+                <textarea placeholder="Scrivi qui una descrizione delle immagini..."></textarea>
+            </div>
+        </div>
+
+        <!-- Sezione per scrivere difficoltà e come sono state superate -->
+        <div class="section textarea-container">
+            <h2>📌 Difficoltà incontrate</h2>
+            <p>Scrivi qui eventuali difficoltà che hai trovato e come le hai risolte:</p>
+            <textarea placeholder="Es. Abbiamo avuto difficoltà nel collegare il sensore, ma dopo aver controllato i collegamenti, ha funzionato!"></textarea>
+        </div>
+
+        <!-- Sezione autori -->
+        <div class="footer">
+            <h2>👨‍💻 Autori del sito</h2>
+            <p>Gioia Trotto & Oussama 
+    </div>
+</body>
+</html>

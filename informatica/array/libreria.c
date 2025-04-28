@@ -7,13 +7,11 @@
 #include "libreria.h" //prototipi delle funzioni
 
 void richiediValori(int vett[],int dim){
-    int n=0, i=0;
-    while(i<dim){
-        printf("inserisci un valore: ");
+    printf("inserisci un valore: ");
+    for(int i=0;i<dim; i++){
         scanf("%d", &vett[i]);
-        i++;
     }
-}
+}   
 
 void stampaVett(int vett[], int dim, char sep){
     for(int i=0; i<dim; i++){
@@ -113,6 +111,13 @@ int SommaVettore(int vett[], int dim, int *_cnt){
     }
     return somma;
 }
-
+void caricaBubble(int vett[], int dim){
+    int temp=0;
+    for(int i=0; i<dim-1; i++){
+        for(int j=0; j<dim-i-1; j++){
+            
+        }
+    }
+}
 
 
