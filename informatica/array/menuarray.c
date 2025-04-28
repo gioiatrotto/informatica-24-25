@@ -28,6 +28,7 @@ int main(){
             }
             case 3:{
                 caricaBubble(vett, DIM);
+                break;
             }
             default:
             break;
