@@ -56,7 +56,7 @@
             margin: 8px 0;
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: left;
+            text-align: center;
         }
         .image-gallery img {
             width: 100%;
@@ -70,7 +70,7 @@
             margin-top: 10px;
         }
         .image-description textarea {
-            width: 100%;
+            width: 98%;
             height: 80px;
             padding: 10px;
             font-size: 1em;
@@ -84,7 +84,7 @@
             text-align: left;
         }
         textarea {
-            width: 100%;
+            width: 98%;
             height: 120px;
             padding: 10px;
             font-size: 1em;
@@ -94,7 +94,7 @@
             resize: none;
         }
         .footer {
-            margin-top: 80px;
+            margin-top: 40px;
             padding: 15px;
             background-color: pink;
             color: white;
@@ -105,26 +105,38 @@
 </head>
 <body>
     <div class="container">
-        <h1>🌟 Progetto Arduino 🌟</h1>
-        <p>Un progetto divertente per imparare Arduino in modo semplice!</p>
+        <h1>⚜️ Progetto Arduino ⚜️</h1>
+       <b> <p>Macchinina a tre route che rileva ostacoli</p></b>
         
         <div class="section">
             <h2>🔍 Cosa fa il progetto?</h2>
-            <p>Questo progetto utilizza un sensore di temperatura per monitorare l'ambiente. 
-               Se la temperatura supera un certo limite, un LED si accenderà e un buzzer emetterà un suono di avviso.</p>
+            <p>Questa macchinina a due ruote si attiva non appena riceve alimentazione.
+                Ma non è solo una semplice macchina: è dotata di un sistema di rilevamento ostacoli 
+                che le consente di cambiare direzione ogni volta che incontra 
+                un impedimento sul suo percorso, dando l’impressione che abbia una mente propria.
+                Un LED si accende automaticamente quando si trova al buio.
+                Quando è il momento di fermare la macchinina, basta premere un pulsante e tutto si spegne.
+                </p>
         </div>
 
         <div class="section">
             <h2>🛠️ Materiali necessari</h2>
             <ul>
                 <li>🔵 Arduino Uno</li>
-                <li>🌡️ Sensore di temperatura (DHT11)</li>
+                <li>📏 Sensore di Distanza</li>
                 <li>💡 LED</li>
+                <li>☀️ Fotoresistore</li>
                 <li>⚙️⚙️ Motori</li>
                 <li>⚡ Resistenze</li>
-                <li>🔌 Cavi jumper</li>
+                <li>🔌 Cavi </li>
                 <li>🔲 Breadboard</li>
+                <li>🚘 Macchinina </li>
             </ul>
+        </div>
+
+        <div class="section">
+            <h2>📜 Procedimento</h2>
+            <textarea placeholder="Descrivi qui il procedimento del progetto..."></textarea>
         </div>
 
         <!-- Galleria immagini con casella di testo -->
@@ -142,14 +154,15 @@
         <!-- Sezione per scrivere difficoltà e come sono state superate -->
         <div class="section textarea-container">
             <h2>📌 Difficoltà incontrate</h2>
-            <p>Scrivi qui eventuali difficoltà che hai trovato e come le hai risolte:</p>
             <textarea placeholder="Es. Abbiamo avuto difficoltà nel collegare il sensore, ma dopo aver controllato i collegamenti, ha funzionato!"></textarea>
         </div>
 
         <!-- Sezione autori -->
         <div class="footer">
             <h2>👨‍💻 Autori del sito</h2>
-            <p>Gioia Trotto & Oussama 
+            <p>Gioia Trotto, Oussama Lakhal</p>
+        </div>
     </div>
 </body>
 </html>
+
