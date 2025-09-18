@@ -1,5 +1,6 @@
 /*Data una matrice di valori scambiare gli elementi della diagonale principale con la diagonale secondaria.*/
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 #define N 4
 
@@ -36,7 +37,7 @@ int main(){
     //stampa matrice
     stampaMat(matrice);
     //scambio diagonali
-    scambioDiag(matrici);
+    scambioDiag(matrice);
      //stampa matrice
     stampaMat(matrice);
 }
