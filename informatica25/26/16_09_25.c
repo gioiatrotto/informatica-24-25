@@ -8,7 +8,7 @@ void caricaMat(int(*_mat)[]){
     printf("carichiamo la matrice: ");
     for(int i=0; i<N; i++)
         for(int j=0; j<N; j++)
-            _mat[i][j]=rand()%30+1;
+            *_mat[i][j]=rand()%30+1;
 
 }
  void stampaMat(int(*_mat)[N]){
