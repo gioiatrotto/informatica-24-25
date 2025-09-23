@@ -17,13 +17,13 @@ int main(){
     int scelta, i, n, trovato=0;
     do{
         printf("\n----MENU----\n");
-        printf("1) Aggiungere un numero");
-        printf("2) Visualizzare tutti i numeri");
-        printf("3) Cercare un numero specifico");
-        printf("4) Ordinare i numeri in ordine crescente");
-        printf("5) Eliminare un numero scelto");
-        printf("6) uscire");
-        printf("esegui una scelta");
+        printf("1) Aggiungere un numero\n");
+        printf("2) Visualizzare tutti i numeri\n");
+        printf("3) Cercare un numero specifico\n");
+        printf("4) Ordinare i numeri in ordine crescente\n");
+        printf("5) Eliminare un numero scelto\n");
+        printf("6) uscire\n");
+        printf("esegui una scelta\n");
         scanf("%d", &scelta);
 
         switch(scelta){
@@ -41,7 +41,7 @@ int main(){
             break;
 
             case 2:
-                printf("contenuto dell'array");
+                printf("contenuto dell'array: \t");
                 if(dimensione==0)
                     printf("array vuoto");
                 else
@@ -62,7 +62,7 @@ int main(){
             if(trovato==0)
                 printf("elemento non trovato\n");
             break;
-            case 4:
+            
         }
 
        
