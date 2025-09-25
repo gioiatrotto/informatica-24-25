@@ -41,7 +41,7 @@ int main(){
             break;
 
             case 2:
-                printf("contenuto dell'array: \t");
+                printf("contenuto dell'array: ");
                 if(dimensione==0)
                     printf("array vuoto");
                 else
