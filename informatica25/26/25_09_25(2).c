@@ -14,7 +14,7 @@
         return NULL;
     }
     return _vettore;
-}
+    }
     int* inserisciValori(int *_vettore, int _n){
         for(int i=0; i<_n; i++){
             printf("inserisci l'elemento: ");
@@ -29,10 +29,19 @@
             printf("%d\t", _vettore[i]);
         }
     }
+    int somma(int *_vettore, int _n){
+        int som=0;
+        for(int i=0; i<_n; i++){
+            if(_vettore[i]%3==0){
+                som+=_vettore[i];
+            }
+        }
+    }
+
 
 int main(){
-     int *vettore=NULL; //puntatore al vettore
-    int n;
+    int *vettore=NULL; //puntatore al vettore
+    int n,somult=0;
     do{
         printf("inserisci la quantità degli elementi: ");
         scanf("%d", &n);
@@ -41,6 +50,7 @@ int main(){
     vettore= creaVett(n);
     vettore = inserisciValori(vettore,n);
     stampaVett(vettore,n);
+    somma(vettore,n);
 
     free(vettore);
 }
