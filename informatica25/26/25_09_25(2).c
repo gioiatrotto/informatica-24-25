@@ -30,6 +30,7 @@
         }
     }
     int calocolaSomma(int *_vettore, int _n){
+        
         int somma=0;
         for(int i=0; i<_n; i++){
             if(_vettore[i]%3==0){
@@ -38,11 +39,24 @@
         }
         return somma;
     }
+    int *estraiDispari(int *_vettore, int _n, int *_dimDispari){
+        int *_dispari=NULL;
+        *_dimDispari=0;
+            for(int i=0; i<_n; i++){
+                if(_vettore[i]%2!=0){
+                    (*_dimDispari)++;
+                    int *tmp=realloc(_dispari,(*_dimDispari)*sizeof(int));
+                    
+                }
+            }
+    }
 
 
 int main(){
     int *vettore=NULL; //puntatore al vettore
     int n;
+    int *dispari;
+    int dimDispari;
     do{
         printf("inserisci la quantità degli elementi: ");
         scanf("%d", &n);
@@ -52,6 +66,7 @@ int main(){
     vettore = inserisciValori(vettore,n);
     stampaVett(vettore,n);
     printf("la somma degli elementi divisibile per 3 vale: %d\n", calcolaSomma(vettore,n));
-
+    //creiamo l'array contenente i valori dispari tramite la realloc
+    dispari = estraiDispari(vettore,n, &dimDispari);
     free(vettore);
 }
