@@ -29,19 +29,20 @@
             printf("%d\t", _vettore[i]);
         }
     }
-    int somma(int *_vettore, int _n){
-        int som=0;
+    int calocolaSomma(int *_vettore, int _n){
+        int somma=0;
         for(int i=0; i<_n; i++){
             if(_vettore[i]%3==0){
-                som+=_vettore[i];
+                somma+=_vettore[i];
             }
         }
+        return somma;
     }
 
 
 int main(){
     int *vettore=NULL; //puntatore al vettore
-    int n,somult=0;
+    int n;
     do{
         printf("inserisci la quantità degli elementi: ");
         scanf("%d", &n);
@@ -50,7 +51,7 @@ int main(){
     vettore= creaVett(n);
     vettore = inserisciValori(vettore,n);
     stampaVett(vettore,n);
-    somma(vettore,n);
+    printf("la somma degli elementi divisibile per 3 vale: %d\n", calcolaSomma(vettore,n));
 
     free(vettore);
 }
