@@ -46,9 +46,17 @@
                 if(_vettore[i]%2!=0){
                     (*_dimDispari)++;
                     int *tmp=realloc(_dispari,(*_dimDispari)*sizeof(int));
-                    
+                    if(tmp==NULL){
+                        printf("Errore di allocazione \n");
+                        free(_dispari);
+                        return NULL;
+
+                    }
+                    _dispari = tmp;
+                    _dispari[(*_dimDispari)-1]= _vettore[i];
                 }
             }
+            return _dispari;
     }
 
 
@@ -69,4 +77,5 @@ int main(){
     //creiamo l'array contenente i valori dispari tramite la realloc
     dispari = estraiDispari(vettore,n, &dimDispari);
     free(vettore);
+    free(dispari);
 }
