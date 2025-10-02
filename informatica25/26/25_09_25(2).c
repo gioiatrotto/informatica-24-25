@@ -29,7 +29,7 @@
             printf("%d\t", _vettore[i]);
         }
     }
-    int calocolaSomma(int *_vettore, int _n){
+    int calcolaSomma(int *_vettore, int _n){
         
         int somma=0;
         for(int i=0; i<_n; i++){
