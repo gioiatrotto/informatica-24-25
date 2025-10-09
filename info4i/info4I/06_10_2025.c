@@ -47,7 +47,7 @@ il programma deve permettere, tramite menü:
         }while(nuovaDim!=_n);
         return _aumenta;
     }
-
+    
 int main(){
       int *vettore=NULL; //puntatore al vettore
     int n;
