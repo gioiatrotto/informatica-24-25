@@ -15,7 +15,8 @@ int main(){
   if(buffer == NULL) return 1;
 
   printf("inserisci una stringa: ");
-  scanf("%s", buffer);
-  printf("hai inserito: %s", buffer);
+  if(fgets(buffer, (len+1), stdin)!=NULL)
+        printf("hai inserito: %s", buffer);
+
   free(buffer);
 }

@@ -7,7 +7,7 @@ int main(){
     int n,quoz=0,cnt=0,somm=0, cifra;
     printf("inserisci un valore: ");
     scanf("%d", &n);
-        quoz=n\10;
+        quoz=n/10;
         cifra=n%10;
         somm+=cifra;
         cnt++;
