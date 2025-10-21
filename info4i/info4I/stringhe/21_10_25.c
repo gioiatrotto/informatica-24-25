@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 typedef char* stringa;
 
 void compatta(stringa buffer, int len){
@@ -20,6 +21,7 @@ int conteggio(stringa frase){
             cnt++;
         }
     }
+    return cnt;
 }
 
 int main(){
@@ -27,7 +29,7 @@ int main(){
     stringa frase;
 
 
-    printf("inserisci una stringa");
+    printf("inserisci una stringa: ");
     fgets(buffer, sizeof(buffer), stdin);
     int len = strlen(buffer);
     compatta(buffer,len);
