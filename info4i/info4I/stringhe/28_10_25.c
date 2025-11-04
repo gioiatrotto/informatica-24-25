@@ -68,14 +68,14 @@ int main(){
                 if(strcmp==0)
                     printf("\n stringhe sono uguali !!");
                 else 
-                    printf("le stringhe non sono uguali");
+                    printf("\nle stringhe non sono uguali");
                 
             break;
             
             case 3:
             printf("\nquale stringa vuoi copiare? ");
             printf("\ndigita 1 se vuoi copiare la prima");
-            printf("digita 2 se vuoi copiare la seconda");
+            printf("\ndigita 2 se vuoi copiare la seconda");
             scanf("%d", &decisione);
                 if(decisione==1)
                     strcpy(s3, s1);
@@ -88,11 +88,11 @@ int main(){
             break;
 
             case 4:
-                printf("che carattere vuoi cercare? ");
+                printf("\nche carattere vuoi cercare? ");
                 scanf("%d", &c);
-                printf("in quale stringa? ");
+                printf("\nin quale stringa? ");
                 printf("\ndigita 1 se vuoi cercare il carattere nella prima");
-                printf("digita 2 se vuoi cercare il carattere nella seconda");
+                printf("\ndigita 2 se vuoi cercare il carattere nella seconda");
                 scanf("%d", &decisione);
 
                 if(decisione==1){
@@ -101,7 +101,7 @@ int main(){
                         tmp=strchr(s1,c);
                         cnt1++;
                     }
-                    printf("il carattere compare %d volte", cnt1);
+                    printf("\nil carattere compare %d volte", cnt1);
                 }
                    
                 if(decisione==2){
@@ -110,7 +110,7 @@ int main(){
                         tmp1=strchr(s2,c);
                         cnt2++;
                     }
-                    printf("il carattere compare %d volte", cnt2);
+                    printf("\nil carattere compare %d volte", cnt2);
                 }
                     
 
