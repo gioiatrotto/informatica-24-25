@@ -23,8 +23,22 @@ int main(){
     printf("\ninserisci il cognome della persona: ");
     scanf("%s", p1.cognome);
     fflush(stdin);
-    printf("inserisci l'età della persona: ");
+    printf("\ninserisci l'età della persona: ");
     scanf("%d", &(p1.età));
     fflush(stdin);
-    printf("dati della persona: %s, %s, %d", p1.nome, p1.cognome, p1.età);
+    printf("\ndati della persona: %s, %s, %d", p1.nome, p1.cognome, p1.età);
+
+    //inseriamo le informazioni in p2
+
+    p2=malloc(sizeof(persona));
+     printf("\ninserisci il nome della persona: ");
+    scanf("%s", p2->nome);
+    fflush(stdin);
+    printf("\ninserisci il cognome della persona: ");
+    scanf("%s", p2->cognome);
+    fflush(stdin);
+    printf("\ninserisci l'età della persona: ");
+    scanf("%d", &(p2->età));
+    fflush(stdin);
+    printf("\ndati della persona: %s, %s, %d", p2->nome, p2->cognome, p2->età);
 }
