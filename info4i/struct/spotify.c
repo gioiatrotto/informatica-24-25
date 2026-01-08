@@ -1,160 +1,231 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-/*  Definizione struct necessarie  */
-typedef struct Canzone {
-    int id;
-    char titolo[50];
-    char artista[50];
+
+typedef struct Brano {
+    char titolo[100];
+    char artista[100];
     int durata;
-    struct Canzone* next;
-} Canzone;
+    int id;
+    struct Brano *next;
+} Brano;
 
-typedef struct Lista {
-    Canzone* testa;
+typedef struct ListaBrani {
+    Brano* testa;
     int lunghezza;
-} Lista;
+} ListaBrani;
 
-/*  Variabile globale per gestire l'id univoco delle canzoni */
-int id_univoco = 0;
+int next_id = 0;
 
-/* Funzioni lista di canzoni disponibili */
-void stampa_canzone(Canzone *c);
-void set_canzone(Canzone *c);
-Lista* crea_lista();
-void stampa_lista(Lista *l);
-void inserisci_canzone_lista(Lista *l);
-void ricerca_canzone_artista(Lista l, char artista);
-void libera_memoria(Lista* l);
+/* ===== FUNZIONI BASE ===== */
 
-/* Funzioni playlist (lista circolare) */
-void inserisci_canzone_playlist(Lista *lista_canzoni, Lista *playlist);
-void stampa_playlist(Lista* playlist);
-void cancella_canzone_playlist(Lista *playlist);
+void stampa_brano(Brano *b) {
+    if (b != NULL) {
+        printf("[%d] %s - %s (%d sec)\n", b->id, b->titolo, b->artista, b->durata);
+    }
+}
 
+void leggi_brano(Brano *b) {
+    printf("Inserisci titolo: ");
+    fgets(b->titolo, 100, stdin);
 
+    printf("Inserisci artista: ");
+    fgets(b->artista, 100, stdin);
+
+    printf("Inserisci durata (sec): ");
+    scanf("%d", &b->durata);
+    getchar();
+
+    b->id = ++next_id;
+}
+
+ListaBrani* crea_lista_brani() {
+    ListaBrani* l = malloc(sizeof(ListaBrani));
+    l->testa = NULL;
+    l->lunghezza = 0;
+    return l;
+}
+
+void stampa_lista_brani(ListaBrani *l) {
+    Brano* corr = l->testa;
+
+    if (corr == NULL) {
+        printf("Lista vuota.\n");
+        return;
+    }
+
+    while (corr != NULL) {
+        stampa_brano(corr);
+        corr = corr->next;
+    }
+}
+
+void aggiungi_brano(ListaBrani *l) {
+    Brano* nuovo = malloc(sizeof(Brano));
+    leggi_brano(nuovo);
+    nuovo->next = l->testa;
+    l->testa = nuovo;
+    l->lunghezza++;
+}
+
+void cerca_per_artista(ListaBrani *l, char *artista) {
+    Brano* corr = l->testa;
+    int trovate = 0;
+
+    while (corr != NULL) {
+        if (strcmp(corr->artista, artista) == 0) {
+            stampa_brano(corr);
+            trovate++;
+        }
+        corr = corr->next;
+    }
+
+    if (!trovate) {
+        printf("Nessuna canzone trovata per l'artista: %s\n", artista);
+    }
+}
+
+void libera_lista_brani(ListaBrani* l) {
+    Brano* corr = l->testa;
+
+    while (corr != NULL) {
+        Brano* temp = corr;
+        corr = corr->next;
+        free(temp);
+    }
+
+    free(l);
+}
+
+/* ===== PLAYLIST (LISTA CIRCOLARE) ===== */
+
+void aggiungi_a_playlist(ListaBrani* catalogo, ListaBrani* playlist) {
+    int id;
+    printf("Inserisci l'id della canzone: ");
+    scanf("%d", &id);
+    getchar();
+
+    Brano* corr = catalogo->testa;
+
+    while (corr != NULL) {
+        if (corr->id == id) {
+            Brano* nuovo = malloc(sizeof(Brano));
+            strcpy(nuovo->titolo, corr->titolo);
+            strcpy(nuovo->artista, corr->artista);
+            nuovo->durata = corr->durata;
+            nuovo->id = corr->id;
+
+            if (playlist->testa == NULL) {
+                playlist->testa = nuovo;
+                nuovo->next = nuovo;
+            } else {
+                Brano* last = playlist->testa;
+                while (last->next != playlist->testa)
+                    last = last->next;
+
+                last->next = nuovo;
+                nuovo->next = playlist->testa;
+            }
+
+            playlist->lunghezza++;
+            printf("Canzone aggiunta alla playlist.\n");
+            return;
+        }
+        corr = corr->next;
+    }
+
+    printf("Canzone non trovata.\n");
+}
+
+void stampa_playlist(ListaBrani* playlist) {
+    if (playlist->testa == NULL) {
+        printf("Playlist vuota.\n");
+        return;
+    }
+
+    Brano* corr = playlist->testa;
+    do {
+        stampa_brano(corr);
+        corr = corr->next;
+    } while (corr != playlist->testa);
+
+    printf("Lunghezza playlist: %d\n", playlist->lunghezza);
+}
+
+void rimuovi_da_playlist(ListaBrani* playlist) {
+    if (playlist->testa == NULL) return;
+
+    Brano* temp = playlist->testa;
+
+    if (temp->next == temp) {
+        playlist->testa = NULL;
+    } else {
+        Brano* last = playlist->testa;
+        while (last->next != playlist->testa)
+            last = last->next;
+
+        playlist->testa = temp->next;
+        last->next = playlist->testa;
+    }
+
+    free(temp);
+    playlist->lunghezza--;
+}
+
+/* ===== MAIN ===== */
 
 int main() {
-    Lista* lista_canzoni = crea_lista();
-    Lista* playlist = crea_lista();
-    Canzone brano[30];
+    ListaBrani* catalogo = crea_lista_brani();
+    ListaBrani* playlist = crea_lista_brani();
 
     int scelta;
     char artista[50];
 
     do {
-        printf("\n===== SPOTIFY 0.0.0.1 =====\n");
-        printf("1. Inserisci nuova canzone nella lista\n");
-        printf("2. Stampa lista canzoni\n");
-        printf("3. Cerca canzoni per artista\n");
-        printf("4. Aggiungi canzone alla playlist\n");
+        printf("\nSPOTIFY\n");
+        printf("1. Inserisci nuova canzone\n");
+        printf("2. Stampa catalogo\n");
+        printf("3. Cerca per artista\n");
+        printf("4. Aggiungi alla playlist\n");
         printf("5. Stampa playlist\n");
-        printf("6. Cancella canzone dalla playlist\n");
+        printf("6. Rimuovi dalla playlist\n");
         printf("0. Esci\n");
         printf("Scelta: ");
+
         scanf("%d", &scelta);
-        getchar(); 
+        getchar();
 
         switch (scelta) {
             case 1:
-                inserisci_canzone_lista(lista_canzoni);
+                aggiungi_brano(catalogo);
                 break;
             case 2:
-                stampa_lista(lista_canzoni);
+                stampa_lista_brani(catalogo);
                 break;
             case 3:
-                printf("Inserisci artista da cercare: ");
+                printf("Inserisci artista: ");
                 fgets(artista, 50, stdin);
-                ricerca_canzone_artista(lista_canzoni, artista);
+                cerca_per_artista(catalogo, artista);
                 break;
             case 4:
-                inserisci_canzone_playlist(lista_canzoni, playlist);
+                aggiungi_a_playlist(catalogo, playlist);
                 break;
             case 5:
                 stampa_playlist(playlist);
                 break;
             case 6:
-                cancella_canzone_playlist(playlist);
+                rimuovi_da_playlist(playlist);
                 break;
             case 0:
-                printf("Uscita...\n");
+                printf("Uscita\n");
                 break;
             default:
-                printf("Scelta non valida. Riprova.\n");
+                printf("Scelta non valida\n");
         }
-
     } while (scelta != 0);
 
-    libera_memoria(lista_canzoni);
-    libera_memoria(playlist);
+    libera_lista_brani(catalogo);
+    libera_lista_brani(playlist);
+
     return 0;
-}
-
-
-
-void stampa_canzone(Canzone *c) {
-    
-}
-
-void set_canzone(Canzone *c) {
-    
-}
-
-Lista* crea_lista() {
-    Lista* lista = (Lista*)malloc(sizeof(Lista));
-    lista->testa = NULL;
-    lista->lunghezza = 0;
-    return lista; //modificare valore di ritorno
-}
-
-void stampa_lista(Lista* l) {
-    Canzone* current = l->testa;
-    
-    printf("Lista: ");
-    while (current != NULL) {
-        printf("%s, %s, %d -> ", current->titolo, current->artista, current->durata);
-        current = current->next;
-    }
-    printf("NULL\n");
-    printf("Lunghezza: %d\n", l->lunghezza);
-}
-
-void inserisci_canzone_lista(Lista *l) {
-    Canzone* nuovaCanzone = (Canzone*)malloc(sizeof(Canzone));
-    printf("inserire il tiolo, l'asrtista e la durata della canzone: \n");
-    scanf("%s, %s, %d", nuovaCanzone->titolo, nuovaCanzone->artista, &nuovaCanzone->durata);
-    nuovaCanzone->next = l->testa;
-    id_univoco++;
-    //nuovaCanzone[id_univoco]=id_univoco;
-    l->testa = nuovaCanzone;
-    l->lunghezza++;
-}
-
-void ricerca_canzone_artista(Lista l, char artista) {
-    Canzone* current = l->testa;
-    int posizione = 0;
-    
-    while (current != NULL) {
-        if (strcmp (current->artista, artista) == 0){
-            printf("%s, %s, %d -> ", current->titolo, current->artista, current->durata);
-        }
-        current = current->next;
-        posizione++;
-    }
-}
-
-void libera_memoria(Lista* l) {
-    // TODO
-}
-
-void inserisci_canzone_playlist(Lista *lista_canzoni, Lista *playlist) {
-    // TODO (inserimento in coda circolare)
-}
-
-void stampa_playlist(Lista* playlist) {
-    // TODO (attenzione alla lista circolare)
-}
-
-void cancella_canzone_playlist(Lista *playlist) {
-    // TODO (rimuovere nodo gestendo i casi speciali)
 }
