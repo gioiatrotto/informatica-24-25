@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Somma pari o dispari</title>
+
+    <style>
+        #risultato {
+            margin-top: 20px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            font-weight: bold;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Somma di due numeri</h2>
+
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+
+    <br><br>
+
+    <button onclick="calcolaSomma()">Calcola</button>
+
+    <div id="risultato">Risultato</div>
+
+    <script>
+        function calcolaSomma() {
+            var n1 = parseInt(document.getElementById("num1").value);
+            var n2 = parseInt(document.getElementById("num2").value);
+
+            var somma = n1 + n2;
+
+            var risultato = document.getElementById("risultato");
+            risultato.innerHTML = "Somma: " + somma;
+
+            if (somma % 2 == 0) {
+                risultato.style.backgroundColor = "green";
+                alert("Il numero è pari");
+            } else {
+                risultato.style.backgroundColor = "red";
+                alert("Il numero è dispari");
+            }
+        }
+    </script>
+
+</body>
+</html>
