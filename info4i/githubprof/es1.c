@@ -1,4 +1,4 @@
--/*## Esercizio 1.
+/*## Esercizio 1.
 Si crei la struttura libro, in cui ogni libro ha un codice numerico (numero intero) 
 che lo caratterizza, un numero di pagine e un costo.
 Si memorizzino i dati di tre libri e si calcoli il costo medio per pagina dei libri 
@@ -8,7 +8,7 @@ e si stampino i dati dei tre libri in ordine crescente di costo per pagina.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "../2_stringhe/libstring.c"
 
 typedef struct{
     int pagine;
