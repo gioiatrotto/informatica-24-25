@@ -1,7 +1,7 @@
 //leggi dal file dati.txt
 #include <stdio.h>
 int main(){
-    FILE *file = fopen("dati.txt", "w");
+    FILE *file = fopen("dati.txt", "r");
     char riga[100];
 
     if(file==NULL){
@@ -12,6 +12,6 @@ int main(){
         printf("%s", riga);
     }
     fclose(file);
-    return 0,
+    return 0;
 
 }
