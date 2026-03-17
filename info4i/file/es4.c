@@ -6,7 +6,7 @@ da contenere gli stessinumeri ma ordinati in senso decrescente*/
 
 void Ordinafile(char nomefile[]){
     FILE *Fp;
-    int vett[100],i=0;
+    int vett[100],i=0, n;
 
     Fp = fopen(nomefile, "r");
     if(Fp == NULL){
@@ -20,6 +20,11 @@ void Ordinafile(char nomefile[]){
         i++;
     }
     fclose(Fp);
+    //ordiniamo i valori
+    n=i; //dimensione array
+    for(i=0; i<n;i++){
+        
+    }
 }
 
 int main(){
