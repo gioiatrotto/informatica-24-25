@@ -65,5 +65,38 @@ studente trovamigliore(studente *array){
     return best;
 }
 int main(){
-    
+    char nomeFile[100];
+    int scelta;
+
+    printf("Inserisci il nome del file: ");
+    scanf("%99s", nomeFile);
+    getchar(); // pulisce il newline lasciato da scanf
+
+    do {
+        printf("\n--- MENU ---\n");
+        printf("1. Scrivi nel file (append)\n");
+        printf("2. Leggi il file\n");
+        printf("3. Esci\n");
+        printf("Scelta: ");
+
+        scanf("%d", &scelta);
+        getchar(); // pulisce il newline lasciato da scanf
+
+        switch (scelta) {
+            case 1:
+                scriviAppend(nomeFile);
+                break;
+            case 2:
+                leggiFile(nomeFile);
+                break;
+            case 3:
+                printf("Uscita...\n");
+                break;
+            default:
+                printf("Scelta non valida.\n");
+        }
+
+    } while (scelta != 3);
+
+    return 0;
 }
